@@ -147,6 +147,7 @@ void nameFind(Product *s,int count){
 void priceFind(Product *s,int count){
     int search_count=0;
     int price;
+    
     getchar();
     printf("검색할 상품 가격은?\n");
     scanf("%d",&price);
