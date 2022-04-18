@@ -99,3 +99,23 @@ void saveData(Product *s,int count){
     fclose(file);
     printf("==> 저장됨!\n");
 }
+int loadData(Product *s){
+    int count=0;
+    FILE * file;
+    file = fopen("product.txt","r");
+    if(file == NULL){
+        printf("==> 파일 없음\n");
+        return 0;
+    }
+    else{
+        while(!feof(file)){
+            int num = fscanf(file,"%s %s %s %d %d\n",s[count].product_name,s[count].product_explain,s[count].weight,&s[count].price,&s[count].method);
+            if(num!=5) break;
+            count++;
+        }
+    }
+    fclose(file);
+    if(count>0) printf("==> 로딩성공!!!\n\n");
+
+    return count;
+}
