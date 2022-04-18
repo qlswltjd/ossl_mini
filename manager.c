@@ -119,3 +119,28 @@ int loadData(Product *s){
 
     return count;
 }
+void nameFind(Product *s,int count){
+    int search_count=0;
+    char find[30];
+    getchar();
+    printf("검색할 상품 이름은?\n");
+    fgets(find,sizeof(find),stdin);
+    find[strlen(find)-1] = '\0';
+
+   printf("\t제품명\t\t설명\t\t\t중량\t판매가격 배송방법\n");
+    printf("*********************************\n");
+    for(int i=0; i<count; i++){
+        if(s[i].price==-1) continue;
+        if(strstr(s[i].product_name,find)){
+            printf("%2d\t",i+1);
+            read_product(s[i]);
+            search_count++;
+        }
+    }
+    if(search_count==0){
+        printf("==> 검색결과 없음!!!\n");
+    }
+    else{
+        printf("%d개를 찾음!!\n",search_count);
+    }
+}
