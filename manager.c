@@ -103,6 +103,7 @@ int loadData(Product *s){
     int count=0;
     FILE * file;
     file = fopen("product.txt","r");
+    
     if(file == NULL){
         printf("==> 파일 없음\n");
         return 0;
