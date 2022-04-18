@@ -167,3 +167,26 @@ void priceFind(Product *s,int count){
         printf("%d개를 찾음!!\n",search_count);
     }
 }
+void methodFind(Product *s,int count){
+    int search_count=0;
+    int method;
+    getchar();
+    printf("검색할 배송방법은?(1:새벽배송 /2:택배배송)\n");
+    scanf("%d",&method);
+
+    printf("\n*********************************\n");
+    for(int i=0; i<count; i++){
+        if(s[i].price==-1) continue;
+        if(s[i].method==method){
+            printf("%2d\t",i+1);
+            read_product(s[i]);
+            search_count++;
+        }
+    }
+    if(search_count==0){
+        printf("==> 검색결과 없음!!!\n");
+    }
+    else{
+        printf("%d개를 찾음!!\n",search_count);
+    }
+}
