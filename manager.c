@@ -122,6 +122,7 @@ int loadData(Product *s){
 void nameFind(Product *s,int count){
     int search_count=0;
     char find[30];
+    
     getchar();
     printf("검색할 상품 이름은?\n");
     fgets(find,sizeof(find),stdin);
