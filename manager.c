@@ -77,7 +77,7 @@ int selectNum(Product *s,int count){//번호를 선택하는 거
     return num;
 }
 void list_product(Product *s,int count){
-    printf("\t제품명\t\t설명\t\t\t중량\t판매가격 배송방법\n");
+    printf("\t제품명\t설명\t중량 판매가격 배송방법\n");
     printf("*********************************\n");
 
     for(int i=0; i<count; i++){
@@ -129,7 +129,7 @@ void nameFind(Product *s,int count){
     fgets(find,sizeof(find),stdin);
     find[strlen(find)-1] = '\0';
 
-   printf("\t제품명\t\t설명\t\t\t중량\t판매가격 배송방법\n");
+    printf("\t제품명\t설명\t중량 판매가격 배송방법\n");
     printf("*********************************\n");
     for(int i=0; i<count; i++){
         if(s[i].price==-1) continue;
