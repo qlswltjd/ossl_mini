@@ -63,7 +63,7 @@ int update_product(Product *s){ getchar();
 }
 void read_product(Product s){
     char method_name[2][30] = {"새벽배송","택배배송"};
-    printf("%-10s %-15s %s %d %s\n",s.product_name,s.product_explain,s.weight,s.price,method_name[s .method-1]);
+    printf("%-10s %-15s %s \t%d\t %s\n",s.product_name,s.product_explain,s.weight,s.price,method_name[s .method-1]);
 }
 int delete_product(Product *s){
     s->price = -1;//가격이 음수인 거는 말이 되지 않음 return 1;
@@ -77,7 +77,7 @@ int selectNum(Product *s,int count){//번호를 선택하는 거
     return num;
 }
 void list_product(Product *s,int count){
-    printf("\t제품명	  설명	         중량 판매가격 배송방법\n");
+    printf("\t제품명	  설명	         중량\t 판매가격\t 배송방법\n");
     printf("*********************************\n");
 
     for(int i=0; i<count; i++){
@@ -129,7 +129,7 @@ void nameFind(Product *s,int count){
     fgets(find,sizeof(find),stdin);
     find[strlen(find)-1] = '\0';
 
-    printf("\t제품명        설명           중량 판매가격 배송방법\n");
+    printf("\t제품명        설명           중량\t 판매가격\t 배송방법\n");
     printf("*********************************\n");
     for(int i=0; i<count; i++){
         if(s[i].price==-1) continue;
