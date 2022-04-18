@@ -87,3 +87,15 @@ void list_product(Product *s,int count){
     }
     printf("\n");
 }
+void saveData(Product *s,int count){
+    int i=0;
+    FILE * file;
+    file = fopen("product.txt","w");
+
+    for(i = 0; i<count; i++){
+        if(s[i].price==-1) continue;
+        fprintf(file,"%s %s %s %d %d\n",s[i].product_name,s[i].product_explain,s[i].weight,s[i].price,s[i].method);
+    }
+    fclose(file);
+    printf("==> 저장됨!\n");
+}
