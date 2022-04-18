@@ -62,8 +62,10 @@ int update_product(Product *s){ getchar();
     return 1;
 }
 void read_product(Product s){
+   
     char method_name[2][30] = {"새벽배송","택배배송"};
     printf("%-10s %-15s %s %d %s\n",s.product_name,s.product_explain,s.weight,s.price,method_name[s .method-1]);
+
 }
 int delete_product(Product *s){
     s->price = -1;//가격이 음수인 거는 말이 되지 않음 return 1;
