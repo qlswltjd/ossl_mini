@@ -170,6 +170,7 @@ void priceFind(Product *s,int count){
 void methodFind(Product *s,int count){
     int search_count=0;
     int method;
+
     getchar();
     printf("검색할 배송방법은?(1:새벽배송 /2:택배배송)\n");
     scanf("%d",&method);
